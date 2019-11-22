@@ -1,0 +1,152 @@
+CREATE TABLE Membresia(
+idMembresia NUMBER(10) NOT NULL,
+Costo NUMBER(5) NOT NULL,
+Tipo_Membresia VARCHAR2(50) NOT NULL,
+Vigencia NUMBER(2) NOT NULL,
+Beneficio1 VARCHAR2(50) NOT NULL,
+Beneficio2 VARCHAR2(50),
+Beneficio3 VARCHAR2(50),
+Beneficio4 VARCHAR2(50),
+Beneficio5 VARCHAR2(50),
+Beneficio6 VARCHAR2(50)
+);
+
+CREATE TABLE Producto(
+idProducto NUMBER(10) NOT NULL,
+Marca VARCHAR2(50) NOT NULL,
+Nombre_Producto VARCHAR2(25) NOT NULL, 
+Descripcion VARCHAR2(300),
+Precio NUMBER(5) NOT NULL,
+Presentacion VARCHAR2(50),
+Cantidad NUMBER(5) NOT NULL
+);
+
+CREATE TABLE Clase(
+idClase NUMBER(10) NOT NULL,
+Puntos NUMBER(5),
+Costo NUMBER(5) NOT NULL,
+Nombre_Clase VARCHAR2(50) NOT NULL
+);
+
+CREATE TABLE HoraInicio(
+idClase NUMBER(10) NOT NULL,
+HoraIn TIMESTAMP NOT NULL
+);
+
+CREATE TABLE HoraFinal(
+idClase VARCHAR2(50) NOT NULL,
+HoraFin TIMESTAMP NOT NULL
+);
+
+CREATE TABLE DiasImpartidos(
+idClase VARCHAR2(50) NOT NULL,
+DiaImp DATE NOT NULL
+);
+
+CREATE TABLE Socio(
+Nombre VARCHAR2(25) NOT NULL,
+Apellido_Paterno VARCHAR2(25) NOT NULL,
+Apellido_Materno VARCHAR2(25) NOT NULL,
+Sexo CHAR(1) NOT NULL,
+EMail VARCHAR2(100),
+Telefono NUMBER(10) NOT NULL,
+Edad NUMBER(2) NOT NULL,
+idSocio NUMBER(10) NOT NULL,
+Contacto NUMBER(10) NOT NULL
+);
+
+CREATE TABLE Entrenador(
+Nombre VARCHAR2(25) NOT NULL,
+Apellido_Paterno VARCHAR2(25) NOT NULL,
+Apellido_Materno VARCHAR2(25) NOT NULL,
+Sexo CHAR(1) NOT NULL,
+EMail VARCHAR2(100),
+Telefono NUMBER(10) NOT NULL,
+Edad NUMBER(2) NOT NULL,
+idEmpleado NUMBER(10) NOT NULL,
+Calle VARCHAR2(25) NOT NULL,
+Numero VARCHAR2(10) NOT NULL,
+Colonia VARCHAR2(25) NOT NULL
+);
+
+CREATE TABLE Instructor(
+Nombre VARCHAR2(25) NOT NULL,
+Apellido_Paterno VARCHAR2(25) NOT NULL,
+Apellido_Materno VARCHAR2(25) NOT NULL,
+Sexo CHAR(1) NOT NULL,
+EMail VARCHAR2(100),
+Telefono NUMBER(10) NOT NULL,
+Edad NUMBER(2) NOT NULL,
+idInstructor NUMBER(10) NOT NULL
+);
+
+CREATE TABLE Cliente(
+Nombre VARCHAR2(25) NOT NULL,
+Apellido_Paterno VARCHAR2(25) NOT NULL,
+Apellido_Materno VARCHAR2(25) NOT NULL,
+Sexo CHAR(1),
+EMail VARCHAR2(100),
+Telefono NUMBER(10),
+Edad NUMBER(2),
+idCliente NUMBER(10) NOT NULL
+);
+
+CREATE TABLE Area(
+NombreArea VARCHAR2(50) NOT NULL
+);
+
+CREATE TABLE Accesar(
+NombreArea VARCHAR2(50) NOT NULL,
+idSocio NUMBER(10) NOT NULL
+);
+
+CREATE TABLE TomarS(
+idSocio NUMBER(10) NOT NULL,
+idEmpleado NUMBER(10) NOT NULL,
+idClase NUMBER(10) NOT NULL
+);
+
+CREATE TABLE TomarC(
+idCliente NUMBER(10) NOT NULL,
+idClase NUMBER(10) NOT NULL
+);
+
+CREATE TABLE ComprarS(
+idSocio NUMBER(10) NOT NULL,
+idProducto NUMBER(10) NOT NULL, 
+)
+
+CREATE TABLE ComprarE(
+idEntrenador NUMBER(10) NOT NULL,
+idProducto NUMBER(10) NOT NULL, 
+)
+
+CREATE TABLE ComprarI(
+idInstructor NUMBER(10) NOT NULL,
+idProducto NUMBER(10) NOT NULL, 
+)
+
+CREATE TABLE ComprarC(
+idCliente NUMBER(10) NOT NULL,
+idProducto NUMBER(10) NOT NULL, 
+)
+
+CREATE TABLE SocioM(
+idSocio NUMBER(10) NOT NULL,
+idMembresia NUMBER(10) NOT NULL
+);
+
+CREATE TABLE SocioE(
+idSocio NUMBER(10) NOT NULL,
+idEmpleado NUMBER(10) NOT NULL
+);
+
+CREATE TABLE Ser(
+idEmpleado NUMBER(10) NOT NULL,
+idInstructor NUMBER(10) NOT NULL
+);
+
+CREATE TABLE Impartir(
+idClase NUMBER(10) NOT NULL,
+idInstructor NUMBER(10) NOT NULL
+);
